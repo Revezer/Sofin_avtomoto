@@ -1,6 +1,8 @@
 import React from 'react'
 import HeaderComponent from './header'
 import firstPhoto from '../../img/firstPhoto.jpg'
+import twoPhoto from '../../img/twoPhoto.jpg'
+import threePhoto from '../../img/threePhoto.jpg'
 import firstPhotoMini from '../../img/firstPhotoMini.jpg'
 import twoPhotoMini from '../../img/twoPhotoMini.jpg'
 import threePhotoMini from '../../img/threePhotoMini.jpg'
@@ -8,8 +10,25 @@ import engineType from '../../img/engineType.png'
 import gearbox from '../../img/gearbox.png'
 import power from '../../img/power.png'
 import volume from '../../img/volume.png'
+import SpecificationsComponent from './specifications'
+import {connect} from 'react-redux'
+import {slideSelection} from '../../store/action'
 
-const Main = () => {
+const Main = (props) => {
+    const {slideNumber, selectSlide} = props
+
+    const slides = [firstPhoto, twoPhoto, threePhoto]
+
+    const nextSlide = () => {
+        let pop = slideNumber + 1
+        selectSlide(pop)
+    }
+
+    const previousSlide = () => {
+        let foo = slideNumber - 1
+        selectSlide(foo)
+    }
+
     return (
         <div>
             <HeaderComponent />
@@ -17,15 +36,15 @@ const Main = () => {
                 <div className='main__conteiner conteiner'>
                     <div>
                         <div className='conteiner__photo'>
-                            <img className='conteiner__photo-img' src={firstPhoto} alt='фотография' />
+                            <img className='conteiner__photo-img' src={slides[slideNumber]} alt='фотография' />
                             <span className='conteiner__photo-text'>new model</span>
                         </div>
                         <div className='conteiner__slider slider'>
-                            <button className='slider__button'></button>
+                            <button className='slider__button' onClick={() => previousSlide()}></button>
                             <img src={firstPhotoMini} alt='фотография'></img>
                             <img src={twoPhotoMini} alt='фотография'></img>
                             <img src={threePhotoMini} alt='фотография'></img>
-                            <button className='slider__button'></button>
+                            <button className='slider__button' onClick={() => nextSlide()}></button>
                         </div>
                     </div>
                     <div className='container__info info'>
@@ -56,14 +75,25 @@ const Main = () => {
                         <button className='info__credit'>в кредит от  11 000 ₽</button>
                     </div>
                 </div>
-                <div>
-                    <button />
-                    <button />
-                    <button />
+                <div className='main__button button'>
+                    <button className='button-selected'>Характеристики</button>
+                    <button className='button-notselected'>Отзывы</button>
+                    <button className='button-notselected'>Контакты</button>
                 </div>
+                <SpecificationsComponent />
             </main>
         </div>
     )
 }
 
-export default Main;
+const mapStateToProps = (state) => ({
+    slideNumber: state.slideNumber,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    selectSlide(number) {
+        dispatch(slideSelection(number))
+    },
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
