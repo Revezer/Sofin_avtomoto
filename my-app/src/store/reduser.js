@@ -1,8 +1,9 @@
 import {ActionType} from './action';
+import moki from '../mocks/reviews'
 
 const initialState = {
   slideNumber: 0,
-
+  reviews: moki,
 };
 
 const reduser = (state = initialState, action) => {

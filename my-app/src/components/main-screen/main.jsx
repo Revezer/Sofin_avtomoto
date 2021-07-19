@@ -13,6 +13,7 @@ import volume from '../../img/volume.png'
 import SpecificationsComponent from './specifications'
 import {connect} from 'react-redux'
 import {slideSelection} from '../../store/action'
+import ReviewsComponent from './reviews'
 
 const Main = (props) => {
     const {slideNumber, selectSlide} = props
@@ -80,7 +81,8 @@ const Main = (props) => {
                     <button className='button-notselected'>Отзывы</button>
                     <button className='button-notselected'>Контакты</button>
                 </div>
-                <SpecificationsComponent />
+                {/* <SpecificationsComponent /> */}
+                <ReviewsComponent />
             </main>
         </div>
     )

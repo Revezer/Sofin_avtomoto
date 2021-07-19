@@ -227,3 +227,47 @@
     line-height: 22px;
     color: #48494D;
 }
+
+.main__reviews {
+    position: relative;
+}
+
+.main__reviews-button {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 189px;
+    height: 52px;
+    border: 1px solid #D12136;
+    background-color: white;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #D12136;
+}
+
+.review__conteiner {
+    padding-top: 30px;
+    padding-left: 6px;
+}
+
+.review__conteiner-name {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: #48494D;
+}
+
+.review__conteiner-dignity {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 20px;
+}
