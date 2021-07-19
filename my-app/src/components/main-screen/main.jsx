@@ -14,6 +14,7 @@ import SpecificationsComponent from './specifications'
 import {connect} from 'react-redux'
 import {slideSelection} from '../../store/action'
 import ReviewsComponent from './reviews'
+import FooterComponent from './footer'
 
 const Main = (props) => {
     const {slideNumber, selectSlide} = props
@@ -84,6 +85,7 @@ const Main = (props) => {
                 {/* <SpecificationsComponent /> */}
                 <ReviewsComponent />
             </main>
+            <FooterComponent />
         </div>
     )
 }
