@@ -254,6 +254,8 @@
 .review__conteiner {
     padding-top: 30px;
     padding-left: 6px;
+    display: flex;
+    flex-direction: column;
 }
 
 .review__conteiner-name {
@@ -265,9 +267,69 @@
     color: #48494D;
 }
 
-.review__conteiner-dignity {
+.review__conteiner-dignity, .review__conteiner-limitation {
     display: flex;
     flex-direction: column;
     margin-top: 15px;
     margin-left: 20px;
+}
+
+.dignity-title, .limitation-title, .review__conteiner-title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.review__conteiner-title {
+    margin-top: 15px;
+}
+
+.dignity-text, .limitation-text, .review__conteiner-text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.appraisal-text {
+    margin-top: 20px;
+}
+
+.appraisal-text, .answer-text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #D12136;
+    padding-top: 5px;
+}
+
+.answer-time {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    opacity: 0.4;
+}
+
+.review__conteiner-appraisal {
+    margin-top: 26px;
+}
+
+.review__conteiner-answer {
+    margin-top: 24px;
+}
+
+.answer-text {
+    margin-left: 28px;
+}
+
+.review__conteiner {
+    padding-bottom: 24px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
 }
