@@ -12,12 +12,12 @@ import power from '../../img/power.png'
 import volume from '../../img/volume.png'
 import SpecificationsComponent from './specifications'
 import {connect} from 'react-redux'
-import {slideSelection} from '../../store/action'
+import {slideSelection, choiceInformation} from '../../store/action'
 import ReviewsComponent from './reviews'
 import FooterComponent from './footer'
 
 const Main = (props) => {
-    const {slideNumber, selectSlide} = props
+    const {slideNumber, selectSlide, buttonSelection, selectedButton} = props
 
     const slides = [firstPhoto, twoPhoto, threePhoto]
 
@@ -29,6 +29,18 @@ const Main = (props) => {
     const previousSlide = () => {
         let foo = slideNumber - 1
         selectSlide(foo)
+    }
+
+    const informationOutput = (selectedButton) => {
+        switch(selectedButton) {
+            case 'characteristics':
+                return <SpecificationsComponent />
+            case 'reviews':
+                return <ReviewsComponent />
+            case 'contacts':
+                return
+            default: <SpecificationsComponent />
+        } 
     }
 
     return (
@@ -78,12 +90,12 @@ const Main = (props) => {
                     </div>
                 </div>
                 <div className='main__button button'>
-                    <button className='button-selected'>Характеристики</button>
-                    <button className='button-notselected'>Отзывы</button>
-                    <button className='button-notselected'>Контакты</button>
+                    <button className='button-selected' onClick={() => buttonSelection('characteristics')}>Характеристики</button>
+                    <button className='button-notselected' onClick={() => buttonSelection('reviews')}>Отзывы</button>
+                    <button className='button-notselected' onClick={() => buttonSelection('contacts')}>Контакты</button>
                 </div>
-                {/* <SpecificationsComponent /> */}
-                <ReviewsComponent />
+                {}
+                {informationOutput(selectedButton)}
             </main>
             <FooterComponent />
         </div>
@@ -92,11 +104,15 @@ const Main = (props) => {
 
 const mapStateToProps = (state) => ({
     slideNumber: state.slideNumber,
+    selectedButton: state.info,
 })
 
 const mapDispatchToProps = (dispatch) => ({
     selectSlide(number) {
         dispatch(slideSelection(number))
+    },
+    buttonSelection(info) {
+        dispatch(choiceInformation(info))
     },
 })
 

@@ -4,6 +4,7 @@ import moki from '../mocks/reviews'
 const initialState = {
   slideNumber: 0,
   reviews: moki,
+  info: 'characteristics',
 };
 
 const reduser = (state = initialState, action) => {
@@ -13,6 +14,11 @@ const reduser = (state = initialState, action) => {
           ...state,
           slideNumber: action.payload,
         };
+      case ActionType.CHOICE__INFORMATION:
+        return {
+          ...state,
+          info: action.payload,
+        }
       default:
     }
   return state;

@@ -295,7 +295,7 @@
 }
 
 .appraisal-text {
-    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .appraisal-text, .answer-text {
@@ -319,6 +319,7 @@
 
 .review__conteiner-appraisal {
     margin-top: 26px;
+    display: flex;
 }
 
 .review__conteiner-answer {
@@ -332,4 +333,34 @@
 .review__conteiner {
     padding-bottom: 24px;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.appraisal__stars {
+    position: relative;
+    width: 103px;
+    height: 17px;
+    margin-top: 8px;
+}
+
+.appraisal__stars::before {
+    content: '';
+    background-image: url('../../img/stars.svg');
+    display: block;
+    height: 100%;
+}
+
+.appraisal__redStars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    height: 100%;
+    overflow: hidden;
+}
+
+.appraisal__redStars::before {
+    content: "";
+    display: block;
+    height: 100%;
+    background-image: url('../../img/redStars.svg')
 }

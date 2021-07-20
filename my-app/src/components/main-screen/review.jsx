@@ -3,6 +3,9 @@ import React from 'react'
 const Review = (props) => {
     const {review} = props
 
+    const ONE_STARS_RATING = 20;
+    const rating = review.appraisal * ONE_STARS_RATING + `%`;
+
     return (
         <div className='review__conteiner'>
             <span className='review__conteiner-name'>{review.name}</span>
@@ -17,7 +20,9 @@ const Review = (props) => {
             <span className='review__conteiner-title'>Комментарий</span>
             <span className='review__conteiner-text'>{review.comment}</span>
             <div className='review__conteiner-appraisal appraisal'>
-                <span></span>
+                <div className='appraisal__stars'>
+                    <span className='appraisal__redStars' style={{width: rating}}></span>
+                </div>
                 <span className='appraisal-text'>Советует</span>
             </div>
             <div className='review__conteiner-answer answer'>
