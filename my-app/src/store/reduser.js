@@ -5,6 +5,7 @@ const initialState = {
   slideNumber: 0,
   reviews: moki,
   info: 'characteristics',
+  popup: 'close'
 };
 
 const reduser = (state = initialState, action) => {
@@ -14,10 +15,20 @@ const reduser = (state = initialState, action) => {
           ...state,
           slideNumber: action.payload,
         };
-      case ActionType.CHOICE__INFORMATION:
+      case ActionType.CHOICE_INFORMATION:
         return {
           ...state,
           info: action.payload,
+        }
+      case ActionType.ADD_REVIEW:
+        return {
+          ...state,
+          reviews: action.payload
+        }
+      case ActionType.OPEN_POPUP:
+        return {
+          ...state,
+          popup: action.payload
         }
       default:
     }

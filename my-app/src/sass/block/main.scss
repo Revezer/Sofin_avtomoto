@@ -49,6 +49,49 @@
     border-radius: 30px;
     border: 1px solid #D7D9DF;
     background: white;
+    position: relative;
+}
+
+.slider__button-activeLeft::after {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 13px;
+    top: 18px;
+    left: 15px;
+    background-image: url('../../img/arrowActive.png');
+    transform: rotate(180deg);
+}
+
+.slider__button-inactiveLeft::after {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 13px;
+    top: 18px;
+    left: 15px;
+    background-image: url('../../img/arrowNoActive.svg');
+    transform: rotate(180deg);
+}
+
+.slider__button-activeRight::after {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 13px;
+    top: 18px;
+    left: 15px;
+    background-image: url('../../img/arrowActive.png');
+}
+
+.slider__button-inactiveRight::after {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 13px;
+    top: 18px;
+    left: 15px;
+    background-image: url('../../img/arrowNoActive.svg');
 }
 
 .container__info {
@@ -167,6 +210,7 @@
     margin-top: 16px;
 }
 
+
 .main__button {
     margin-top: 90px;
     margin-left: 6px;
@@ -200,6 +244,11 @@
     text-align: center;
     color: #48494D;
     background-color: white;
+}
+
+.button-notselected:hover, .button-notselected:focus {
+    background-color: #BD0C21;
+    color: white;
 }
 
 .main__fullinfo {
@@ -363,4 +412,171 @@
     display: block;
     height: 100%;
     background-image: url('../../img/redStars.svg')
+}
+
+.info__buy:hover, .info__buy:focus {
+    background-color: #BD0C21;
+}
+
+.info__credit:hover, .info__credit:focus, .main__reviews-button:hover, .main__reviews-button:focus {
+    background-color: #D12136;
+    color: white;
+}
+
+.map {
+    border: 0;
+    margin-left: 74px;
+}
+
+.section__contacts {
+    display: flex;
+    margin-left: 6px;
+    margin-top: 30px;
+}
+
+.contact__block {
+    height: 284px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 274px;
+}
+
+.contact__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #1A212F;
+}
+
+.contact__text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.contact__text-top {
+    margin-top: 0px;
+}
+
+.review__popup {
+    width: 698px;
+    height: 415px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: #F5F5F9;
+}
+
+.review__popup-disabled {
+    display: none;
+}
+
+.popup__block {
+    display: flex;
+    width: 628px;
+    height: 182px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+
+.popup__conteiner {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 182px;
+    justify-content: space-between;
+}
+
+.popup__name {
+    text-align: center;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 34px;
+    color: #48494D;
+    margin-top: 30px;
+    margin-bottom: 37px;
+}
+
+.popup__block-rating {
+    display: flex;
+    margin-top: 10px;
+}
+
+.popup__text::-webkit-input-placeholder, .popup__text::-moz-placeholder, .popup__text:-moz-placeholder, .popup__text:-ms-input-placeholder {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #48494D;
+}
+
+.popup__text {
+    height: 50px;
+    padding-left: 25px;
+    font-family: 'Open Sans';
+}
+
+.popup__text-comment {
+    height: 118px;
+}
+
+.popup__button {
+    width: 190px;
+    height: 52px;
+    margin-top: 35px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: none;
+    background: #D12136;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.popup__title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.popup__button-close {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    border: none;
+    background: #F5F5F9;
+    background-image: url('../../img/Esc.svg');
 }
