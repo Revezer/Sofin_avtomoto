@@ -86,7 +86,7 @@ const Popup = (props) => {
 Popup.propTypes = {
     addNewReview: PropTypes.func.isRequired,
     closePopup: PropTypes.func.isRequired,
-    reviews: PropTypes.object.isRequired,
+    reviews: PropTypes.array.isRequired,
     popup: PropTypes.string.isRequired
   };
 
