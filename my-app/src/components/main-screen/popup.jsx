@@ -58,19 +58,19 @@ const Popup = (props) => {
                             <span className='popup__title'>Оцените товар:</span>
                             <div className='popup__rating'>
                                 <label className={oneStar}>
-                                    <input className='form__rating-input visually-hidden' name='appraisal' defaultValue={1} type='radio' onClick={handleFieldChange}/>
+                                    <input className='visually-hidden' name='appraisal' defaultValue={1} type='radio' onClick={handleFieldChange}/>
                                 </label>
                                 <label className={twoStar}>
-                                    <input className='form__rating-input visually-hidden' name='appraisal' defaultValue={2} type='radio' onClick={handleFieldChange}/>
+                                    <input className='visually-hidden' name='appraisal' defaultValue={2} type='radio' onClick={handleFieldChange}/>
                                 </label>
                                 <label className={threeStar}>
-                                    <input className='form__rating-input visually-hidden' name='appraisal' defaultValue={3} type='radio' onClick={handleFieldChange}/>
+                                    <input className='visually-hidden' name='appraisal' defaultValue={3} type='radio' onClick={handleFieldChange}/>
                                 </label>
                                 <label className={fourStar}>
-                                    <input className='form__rating-input visually-hidden' name='appraisal' defaultValue={4} type='radio' onClick={handleFieldChange}/>
+                                    <input className='visually-hidden' name='appraisal' defaultValue={4} type='radio' onClick={handleFieldChange}/>
                                 </label>
                                 <label className={fiveStar}>
-                                    <input className='form__rating-input visually-hidden' name='appraisal' defaultValue={5} type='radio' onClick={handleFieldChange}/>
+                                    <input className='visually-hidden' name='appraisal' defaultValue={5} type='radio' onClick={handleFieldChange}/>
                                 </label>
                             </div>
                         </div>
