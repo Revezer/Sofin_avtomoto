@@ -2,7 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {openPopup} from '../../store/action'
 import ReviewComponents from './review'
-import PopupComponent from './popup'
 import PropTypes from 'prop-types'
 
 const Reviews = (props) => {
@@ -18,7 +17,6 @@ const Reviews = (props) => {
                 reviews.map((review, index) => <ReviewComponents key={review + index} review={reviews[index]} />)
             }
             <button className='main__reviews-button' onClick={() => handleOpenPopup()}>Оставить отзыв</button>
-            <PopupComponent />
         </div>
     )
 }

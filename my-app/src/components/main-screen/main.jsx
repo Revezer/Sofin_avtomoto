@@ -13,7 +13,7 @@ import volume from '../../img/volume.png'
 import SpecificationsComponent from './specifications'
 import ContactsComponent from './contacts'
 import {connect} from 'react-redux'
-import {slideSelection, choiceInformation} from '../../store/action'
+import {slideSelection, choiceInformation, openPopup} from '../../store/action'
 import ReviewsComponent from './reviews'
 import FooterComponent from './footer'
 import PropTypes from 'prop-types'
@@ -22,7 +22,7 @@ const MIN_SLIDE = 0
 const MAX_SLIDE = 2
 
 const Main = (props) => {
-    const {slideNumber, selectSlide, buttonSelection, selectedButton} = props
+    const {slideNumber, selectSlide, buttonSelection, selectedButton, closePopup, popup} = props
 
     const slides = [firstPhoto, twoPhoto, threePhoto]
 
@@ -53,6 +53,12 @@ const Main = (props) => {
             default: <SpecificationsComponent />
         } 
     }
+
+    const handleClosePopup = () => {
+        closePopup('close')
+    }
+
+    const closePopupDiv = popup === 'open' ? <div className='openpopup' onClick={() => handleClosePopup()}></div> : <div></div>
 
     const leftButtonInactive = slideNumber === MIN_SLIDE ? 'slider__button slider__button-inactiveLeft' : 'slider__button slider__button-activeLeft'
     const rightButtonInactive = slideNumber === MAX_SLIDE ? 'slider__button slider__button-inactiveRight' : 'slider__button slider__button-activeRight'
@@ -115,6 +121,7 @@ const Main = (props) => {
                 {informationOutput(selectedButton)}
             </main>
             <FooterComponent />
+            {closePopupDiv}
         </div>
     )
 }
@@ -123,12 +130,15 @@ Main.propTypes = {
     slideNumber: PropTypes.number.isRequired,
     selectSlide: PropTypes.func.isRequired,
     buttonSelection: PropTypes.func.isRequired,
-    selectedButton: PropTypes.string.isRequired
+    selectedButton: PropTypes.string.isRequired,
+    closePopup: PropTypes.func.isRequired,
+    popup: PropTypes.string.isRequired
   };
 
 const mapStateToProps = (state) => ({
     slideNumber: state.slideNumber,
     selectedButton: state.info,
+    popup: state.popup
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -138,6 +148,9 @@ const mapDispatchToProps = (dispatch) => ({
     buttonSelection(info) {
         dispatch(choiceInformation(info))
     },
+    closePopup(action) {
+        dispatch(openPopup(action))
+    }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

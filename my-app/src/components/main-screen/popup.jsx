@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import {addReview, openPopup} from '../../store/action'
+import PropTypes from 'prop-types'
 
 const Popup = (props) => {
     const {reviews, addNewReview, popup, closePopup} = props
@@ -33,7 +34,7 @@ const Popup = (props) => {
 
     const disabledPopup = popup === 'close' ? 'review__popup popup review__popup-disabled' : 'review__popup'
 
-    const handleOpenPopup = () => {
+    const handleClosePopup = () => {
         closePopup('close')
     }
 
@@ -77,10 +78,17 @@ const Popup = (props) => {
                     </div>
                 </div>
                 <button className='popup__button' type='submit'>оставить отзыв</button>
-                <button className='popup__button-close' onClick={() => handleOpenPopup()}></button>
+                <button className='popup__button-close' onClick={() => handleClosePopup()}></button>
             </form>
     )
 }
+
+Popup.propTypes = {
+    addNewReview: PropTypes.func.isRequired,
+    closePopup: PropTypes.func.isRequired,
+    reviews: PropTypes.object.isRequired,
+    popup: PropTypes.string.isRequired
+  };
 
 const mapStateToProps = (state) => ({
     reviews: state.reviews,
