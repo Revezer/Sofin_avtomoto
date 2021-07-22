@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {openPopup} from '../../store/action'
 import ReviewComponents from './review'
 import PopupComponent from './popup'
+import PropTypes from 'prop-types'
 
 const Reviews = (props) => {
     const {reviews, openPopup} = props
@@ -21,6 +22,11 @@ const Reviews = (props) => {
         </div>
     )
 }
+
+Reviews.propTypes = {
+    reviews: PropTypes.array.isRequired,
+    openPopup: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (state) => ({
     reviews: state.reviews

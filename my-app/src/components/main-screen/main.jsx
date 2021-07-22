@@ -16,6 +16,7 @@ import {connect} from 'react-redux'
 import {slideSelection, choiceInformation} from '../../store/action'
 import ReviewsComponent from './reviews'
 import FooterComponent from './footer'
+import PropTypes from 'prop-types'
 
 const MIN_SLIDE = 0
 const MAX_SLIDE = 2
@@ -111,13 +112,19 @@ const Main = (props) => {
                     <button className={buttonReviewsActive} onClick={() => buttonSelection('reviews')}>Отзывы</button>
                     <button className={butoonContactsActive} onClick={() => buttonSelection('contacts')}>Контакты</button>
                 </div>
-                {}
                 {informationOutput(selectedButton)}
             </main>
             <FooterComponent />
         </div>
     )
 }
+
+Main.propTypes = {
+    slideNumber: PropTypes.number.isRequired,
+    selectSlide: PropTypes.func.isRequired,
+    buttonSelection: PropTypes.func.isRequired,
+    selectedButton: PropTypes.string.isRequired
+  };
 
 const mapStateToProps = (state) => ({
     slideNumber: state.slideNumber,
