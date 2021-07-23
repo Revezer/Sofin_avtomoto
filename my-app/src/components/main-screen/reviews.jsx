@@ -9,6 +9,11 @@ const Reviews = (props) => {
 
     const handleOpenPopup = () => {
         openPopup('open')
+        window.onkeydown = (evt) => {
+            if ( evt.keyCode === 27 ) {
+                openPopup('close')
+            }
+        };
     }
 
     return (
@@ -16,7 +21,7 @@ const Reviews = (props) => {
             {
                 reviews.map((review, index) => <ReviewComponents key={review + index} review={reviews[index]} />)
             }
-            <button className='main__reviews-button' onClick={() => handleOpenPopup()}>Оставить отзыв</button>
+            <button className='main__reviews-button' onClick={handleOpenPopup}>Оставить отзыв</button>
         </div>
     )
 }

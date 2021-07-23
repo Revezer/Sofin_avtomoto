@@ -15,6 +15,7 @@
 
 .main__conteiner {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .conteiner__photo {
@@ -24,7 +25,7 @@
 }
 
 .conteiner__photo-text {
-    width: 122px;
+    max-width: 122px;
     display: flex;
     height: 30px;
     align-items: center;
@@ -104,7 +105,7 @@
 
 .container__info {
     margin-left: 57px;
-    width: 350px;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
 }
@@ -126,7 +127,7 @@
     padding: 0px;
     justify-content: space-between;
     margin-top: 21px;
-    width: 285px;
+    max-width: 285px;
 }
 
 .info__item {
@@ -185,7 +186,7 @@
 }
 
 .info__buy {
-    width: 196px;
+    max-width: 196px;
     height: 52px;
     background: $red;
     border: none;
@@ -205,7 +206,7 @@
     border: 1px solid $red;
     box-sizing: border-box;
     background-color: white;
-    width: 222px;
+    max-width: 222px;
     height: 52px;
     font-family: 'Open Sans', 'Arial';;
     font-style: normal;
@@ -294,7 +295,7 @@
     position: absolute;
     top: 30px;
     right: 0px;
-    width: 189px;
+    max-width: 189px;
     height: 52px;
     border: 1px solid $red;
     background-color: white;
@@ -397,7 +398,7 @@
 
 .appraisal__stars {
     position: relative;
-    width: 103px;
+    max-width: 103px;
     height: 17px;
     margin-top: 8px;
 }
