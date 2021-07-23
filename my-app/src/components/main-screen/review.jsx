@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+const ONE_STARS_RATING = 20;
+
 const Review = (props) => {
     const {review} = props
 
-    const ONE_STARS_RATING = 20;
     const rating = review.appraisal * ONE_STARS_RATING + `%`;
 
     return (
@@ -28,14 +29,14 @@ const Review = (props) => {
             </div>
             <div className='review__conteiner-answer answer'>
                 <span className='answer-time'>1 минуту назад</span>
-                <span className='answer-text'>Ответить</span>
+                <button className='answer-text'>Ответить</button>
             </div>
         </div>
     )
 }
 
 Review.propTypes = {
-    review: PropTypes.object.isRequired,
+    review: PropTypes.objectOf(PropTypes.string).isRequired
 };
 
 export default Review;

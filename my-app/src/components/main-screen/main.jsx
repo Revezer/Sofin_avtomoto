@@ -22,11 +22,11 @@ const MIN_SLIDE = 0
 const MAX_SLIDE = 2
 
 const Main = (props) => {
-    const {slideNumber, selectSlide, buttonSelection, selectedButton, closePopup, popup} = props
+    const {slideNumber, selectSlide, buttonSelectionСharacteristics, buttonSelectionReviews, buttonSelectionContacts, selectedButton, closePopup, popup} = props
 
     const slides = [firstPhoto, twoPhoto, threePhoto]
 
-    const nextSlide = () => {
+    const onButtonClickNextSlide = () => {
         let pop = slideNumber + 1
         if (pop >= MAX_SLIDE) {
             pop = MAX_SLIDE
@@ -34,7 +34,7 @@ const Main = (props) => {
         selectSlide(pop)
     }
 
-    const previousSlide = () => {
+    const onButtonClickPreviousSlide = () => {
         let foo = slideNumber - 1
         if (foo <= MIN_SLIDE) {
             foo = MIN_SLIDE
@@ -42,7 +42,7 @@ const Main = (props) => {
         selectSlide(foo)
     }
 
-    const informationOutput = (selectedButton) => {
+    const getInformationOutput = (selectedButton) => {
         switch(selectedButton) {
             case 'characteristics':
                 return <SpecificationsComponent />
@@ -50,7 +50,7 @@ const Main = (props) => {
                 return <ReviewsComponent />
             case 'contacts':
                 return <ContactsComponent />
-            default: <SpecificationsComponent />
+            default:
         } 
     }
 
@@ -58,9 +58,9 @@ const Main = (props) => {
         closePopup('close')
     }
 
-    const closePopupDiv = popup === 'open' ? <div className='openpopup' onClick={() => handleClosePopup()}></div> : <div></div>
+    const closePopupDiv = popup === 'open' ? <div className='openpopup' onClick={handleClosePopup}></div> : ''
 
-    const leftButtonInactive = slideNumber === MIN_SLIDE ? 'slider__button slider__button-inactiveLeft' : 'slider__button slider__button-activeLeft'
+    const leftButtonInactive =  slideNumber === MIN_SLIDE ? 'slider__button slider__button-inactiveLeft' : 'slider__button slider__button-activeLeft'
     const rightButtonInactive = slideNumber === MAX_SLIDE ? 'slider__button slider__button-inactiveRight' : 'slider__button slider__button-activeRight'
 
     const buttonCharacteristicsActive = selectedButton === 'characteristics' ? 'button-selected' : 'button-notselected'
@@ -78,11 +78,11 @@ const Main = (props) => {
                             <span className='conteiner__photo-text'>new model</span>
                         </div>
                         <div className='conteiner__slider slider'>
-                            <button className={leftButtonInactive} onClick={() => previousSlide()}></button>
+                            <button className={leftButtonInactive} onClick={onButtonClickPreviousSlide}></button>
                             <img src={firstPhotoMini} alt='фотография'></img>
                             <img src={twoPhotoMini} alt='фотография'></img>
                             <img src={threePhotoMini} alt='фотография'></img>
-                            <button className={rightButtonInactive} onClick={() => nextSlide()}></button>
+                            <button className={rightButtonInactive} onClick={onButtonClickNextSlide}></button>
                         </div>
                     </div>
                     <div className='container__info info'>
@@ -114,11 +114,11 @@ const Main = (props) => {
                     </div>
                 </div>
                 <div className='main__button button'>
-                    <button className={buttonCharacteristicsActive} onClick={() => buttonSelection('characteristics')}>Характеристики</button>
-                    <button className={buttonReviewsActive} onClick={() => buttonSelection('reviews')}>Отзывы</button>
-                    <button className={butoonContactsActive} onClick={() => buttonSelection('contacts')}>Контакты</button>
+                    <button className={buttonCharacteristicsActive} onClick={buttonSelectionСharacteristics}>Характеристики</button>
+                    <button className={buttonReviewsActive} onClick={buttonSelectionReviews}>Отзывы</button>
+                    <button className={butoonContactsActive} onClick={buttonSelectionContacts}>Контакты</button>
                 </div>
-                {informationOutput(selectedButton)}
+                {getInformationOutput(selectedButton)}
             </main>
             <FooterComponent />
             {closePopupDiv}
@@ -129,10 +129,12 @@ const Main = (props) => {
 Main.propTypes = {
     slideNumber: PropTypes.number.isRequired,
     selectSlide: PropTypes.func.isRequired,
-    buttonSelection: PropTypes.func.isRequired,
     selectedButton: PropTypes.string.isRequired,
     closePopup: PropTypes.func.isRequired,
-    popup: PropTypes.string.isRequired
+    popup: PropTypes.string.isRequired,
+    buttonSelectionСharacteristics: PropTypes.func.isRequired,
+    buttonSelectionReviews: PropTypes.func.isRequired,
+    buttonSelectionContacts: PropTypes.func.isRequired
   };
 
 const mapStateToProps = (state) => ({
@@ -145,8 +147,14 @@ const mapDispatchToProps = (dispatch) => ({
     selectSlide(number) {
         dispatch(slideSelection(number))
     },
-    buttonSelection(info) {
-        dispatch(choiceInformation(info))
+    buttonSelectionСharacteristics() {
+        dispatch(choiceInformation('characteristics'))
+    },
+    buttonSelectionReviews() {
+        dispatch(choiceInformation('reviews'))
+    },
+    buttonSelectionContacts() {
+        dispatch(choiceInformation('contacts'))
     },
     closePopup(action) {
         dispatch(openPopup(action))

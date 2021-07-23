@@ -12,7 +12,8 @@
 }
 
 .header__conteiner {
-    width: 600px;
+    max-width: 600px;
+    flex-grow: 1;
 }
 
 .header__list{
@@ -33,9 +34,10 @@
 .header__link {
     color: $mediumGray;
     text-decoration: none;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', 'Arial';;
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
+    padding-left: 0px;
 }
 

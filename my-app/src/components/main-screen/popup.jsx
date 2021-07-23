@@ -14,7 +14,6 @@ const Popup = (props) => {
         appraisal: '0',
     })
 
-
     const handleFieldChange = (evt) => {
         const {name, value} = evt.target;
 
@@ -56,21 +55,21 @@ const Popup = (props) => {
                     <div className='popup__conteiner'>
                         <div className='popup__block-rating'>
                             <span className='popup__title'>Оцените товар:</span>
-                            <div className='popup__rating'>
+                            <div className='popup__rating' onClick={handleFieldChange}>
                                 <label className={oneStar}>
-                                    <input className='visually-hidden' name='appraisal' defaultValue={1} type='radio' onClick={handleFieldChange}/>
+                                    <input className='visually-hidden' name='appraisal' defaultValue={1} type='radio'/>
                                 </label>
                                 <label className={twoStar}>
-                                    <input className='visually-hidden' name='appraisal' defaultValue={2} type='radio' onClick={handleFieldChange}/>
+                                    <input className='visually-hidden' name='appraisal' defaultValue={2} type='radio'/>
                                 </label>
                                 <label className={threeStar}>
-                                    <input className='visually-hidden' name='appraisal' defaultValue={3} type='radio' onClick={handleFieldChange}/>
+                                    <input className='visually-hidden' name='appraisal' defaultValue={3} type='radio'/>
                                 </label>
                                 <label className={fourStar}>
-                                    <input className='visually-hidden' name='appraisal' defaultValue={4} type='radio' onClick={handleFieldChange}/>
+                                    <input className='visually-hidden' name='appraisal' defaultValue={4} type='radio'/>
                                 </label>
                                 <label className={fiveStar}>
-                                    <input className='visually-hidden' name='appraisal' defaultValue={5} type='radio' onClick={handleFieldChange}/>
+                                    <input className='visually-hidden' name='appraisal' defaultValue={5} type='radio'/>
                                 </label>
                             </div>
                         </div>
@@ -86,8 +85,14 @@ const Popup = (props) => {
 Popup.propTypes = {
     addNewReview: PropTypes.func.isRequired,
     closePopup: PropTypes.func.isRequired,
-    reviews: PropTypes.array.isRequired,
-    popup: PropTypes.string.isRequired
+    popup: PropTypes.string.isRequired,
+    reviews: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        dignity: PropTypes.string,
+        limitations: PropTypes.string,
+        comment: PropTypes.string.isRequired,
+        appraisal: PropTypes.string.isRequired
+    })).isRequired,
   };
 
 const mapStateToProps = (state) => ({

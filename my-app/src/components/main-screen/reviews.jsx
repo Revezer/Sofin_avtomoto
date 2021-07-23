@@ -22,7 +22,13 @@ const Reviews = (props) => {
 }
 
 Reviews.propTypes = {
-    reviews: PropTypes.array.isRequired,
+    reviews: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        dignity: PropTypes.string,
+        limitations: PropTypes.string,
+        comment: PropTypes.string.isRequired,
+        appraisal: PropTypes.string.isRequired
+    })).isRequired,
     openPopup: PropTypes.func.isRequired,
 };
 
