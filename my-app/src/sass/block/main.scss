@@ -33,7 +33,7 @@
     justify-content: center;
     top: 0px;
     position: absolute;
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 10px;
@@ -111,7 +111,7 @@
 }
 
 .info__name {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 30px;
@@ -142,7 +142,7 @@
 }
 
 .info__text {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -155,7 +155,7 @@
 }
 
 .info__prise-new {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 35px;
@@ -164,7 +164,7 @@
 }
 
 .info__prise-old {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -190,7 +190,7 @@
     height: 52px;
     background: $red;
     border: none;
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -208,7 +208,7 @@
     background-color: white;
     max-width: 222px;
     height: 52px;
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -234,7 +234,7 @@
 .button-selected {
     border: none;
     background-color: $red;
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -246,7 +246,7 @@
 .button-notselected {
     border: 1px solid $grey;
     box-sizing: border-box;
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -279,7 +279,7 @@
 
 .fullinfo__text {
     margin-top: 24px;
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -299,7 +299,7 @@
     height: 52px;
     border: 1px solid $red;
     background-color: white;
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -318,7 +318,7 @@
 }
 
 .review__conteiner-name {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -334,7 +334,7 @@
 }
 
 .dignity-title, .limitation-title, .review__conteiner-title {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 15px;
@@ -346,7 +346,7 @@
 }
 
 .dignity-text, .limitation-text, .review__conteiner-text {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
@@ -358,7 +358,7 @@
 }
 
 .appraisal-text, .answer-text {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -368,7 +368,7 @@
 }
 
 .answer-time {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -460,7 +460,7 @@
 }
 
 .contact__title {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -471,7 +471,7 @@
 }
 
 .contact__text {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -521,7 +521,7 @@
 
 .popup__name {
     text-align: center;
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 25px;
@@ -537,7 +537,7 @@
 }
 
 .popup__text::-webkit-input-placeholder, .popup__text::-moz-placeholder, .popup__text:-moz-placeholder, .popup__text:-ms-input-placeholder {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -548,7 +548,7 @@
 .popup__text {
     height: 50px;
     padding-left: 25px;
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .popup__text-comment {
@@ -559,7 +559,7 @@
     width: 190px;
     height: 52px;
     margin-top: 35px;
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -575,7 +575,7 @@
 }
 
 .popup__title {
-    font-family: 'Open Sans', 'Arial';;
+    font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 15px;
