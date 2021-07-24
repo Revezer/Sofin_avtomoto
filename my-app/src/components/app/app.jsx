@@ -4,10 +4,10 @@ import PopupComponent from '../main-screen/popup'
 
 const App = () => {
     return (
-        <div>
+        <>
             <MainComponent />
             <PopupComponent />
-        </div>
+        </>
     )
 }
 

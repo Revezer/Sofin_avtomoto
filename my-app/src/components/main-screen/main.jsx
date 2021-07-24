@@ -68,7 +68,7 @@ const Main = (props) => {
     const butoonContactsActive = selectedButton === 'contacts' ? 'button-selected' : 'button-notselected'
 
     return (
-        <div>
+        <>
             <HeaderComponent />
             <main className='main'>
                 <div className='main__conteiner conteiner'>
@@ -122,7 +122,7 @@ const Main = (props) => {
             </main>
             <FooterComponent />
             {closePopupDiv}
-        </div>
+        </>
     )
 }
 
