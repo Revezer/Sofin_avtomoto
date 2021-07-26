@@ -50,7 +50,8 @@ const Main = (props) => {
                 return <ReviewsComponent />
             case 'contacts':
                 return <ContactsComponent />
-            default: <SpecificationsComponent />
+            default: 
+                return <SpecificationsComponent />
         } 
     }
 
