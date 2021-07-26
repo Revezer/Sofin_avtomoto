@@ -57,6 +57,7 @@ const Main = (props) => {
 
     const handleClosePopup = () => {
         closePopup('close')
+        document.body.classList.remove('overflow');
     }
 
     const closePopupDiv = popup === 'open' ? <div className='openpopup' onClick={handleClosePopup}></div> : ''

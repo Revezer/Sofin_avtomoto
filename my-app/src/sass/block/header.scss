@@ -1,5 +1,4 @@
 .header {
-    height: 84px;
     background-color: $whiteSmoke;
 }
 
@@ -8,12 +7,15 @@
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    height: 84px;
+    min-height: 84px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .header__conteiner {
     max-width: 600px;
     flex-grow: 1;
+    padding-left: 6px;
 }
 
 .header__list{
@@ -25,6 +27,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .header__logo {
@@ -40,4 +43,3 @@
     line-height: 22px;
     padding-left: 0px;
 }
-

@@ -12,8 +12,10 @@ const Reviews = (props) => {
         window.onkeydown = (evt) => {
             if ( evt.keyCode === 27 ) {
                 openPopup('close')
+                document.body.classList.remove('overflow');
             }
         };
+        document.body.classList.add('overflow');
     }
 
     return (

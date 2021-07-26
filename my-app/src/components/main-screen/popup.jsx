@@ -29,12 +29,14 @@ const Popup = (props) => {
         newReviews.push(newReview)
         addNewReview(newReviews)
         closePopup('close')
+        document.body.classList.remove('overflow');
     }
 
     const disabledPopup = popup === 'close' ? 'review__popup popup review__popup-disabled' : 'review__popup'
 
     const handleClosePopup = () => {
         closePopup('close')
+        document.body.classList.remove('overflow');
     }
 
     const oneStar = newReview.appraisal > 0 ? 'popup__redstar' : 'popup__star'
@@ -45,40 +47,40 @@ const Popup = (props) => {
 
     return (
         <form className={disabledPopup} onSubmit={handleSubmit}>
-                <span className='popup__name'>Оставить отзыв</span>
-                <div className='popup__block'>
-                    <div className='popup__conteiner'>
-                        <input className='popup__text' placeholder='Имя' required name='name' onChange={handleFieldChange}></input>
-                        <input className='popup__text' placeholder='Достоинства' name='dignity' onChange={handleFieldChange}></input>
-                        <input className='popup__text' placeholder='Недостатки' name='limitations' onChange={handleFieldChange}></input>
-                    </div>
-                    <div className='popup__conteiner'>
-                        <div className='popup__block-rating'>
-                            <span className='popup__title'>Оцените товар:</span>
-                            <div className='popup__rating' onClick={handleFieldChange}>
-                                <label className={oneStar}>
-                                    <input className='visually-hidden' name='appraisal' defaultValue={1} type='radio'/>
-                                </label>
-                                <label className={twoStar}>
-                                    <input className='visually-hidden' name='appraisal' defaultValue={2} type='radio'/>
-                                </label>
-                                <label className={threeStar}>
-                                    <input className='visually-hidden' name='appraisal' defaultValue={3} type='radio'/>
-                                </label>
-                                <label className={fourStar}>
-                                    <input className='visually-hidden' name='appraisal' defaultValue={4} type='radio'/>
-                                </label>
-                                <label className={fiveStar}>
-                                    <input className='visually-hidden' name='appraisal' defaultValue={5} type='radio'/>
-                                </label>
-                            </div>
-                        </div>
-                        <textarea className='popup__text popup__text-comment' placeholder='Комментарий' required name='comment' onChange={handleFieldChange}></textarea>
-                    </div>
+            <span className='popup__name'>Оставить отзыв</span>
+            <div className='popup__block'>
+                <div className='popup__conteiner'>
+                    <input className='popup__text' placeholder='Имя' required name='name' onChange={handleFieldChange}></input>
+                    <input className='popup__text' placeholder='Достоинства' name='dignity' onChange={handleFieldChange}></input>
+                    <input className='popup__text' placeholder='Недостатки' name='limitations' onChange={handleFieldChange}></input>
                 </div>
-                <button className='popup__button' type='submit'>оставить отзыв</button>
-                <button className='popup__button-close' onClick={() => handleClosePopup()}></button>
-            </form>
+                <div className='popup__conteiner'>
+                    <div className='popup__block-rating'>
+                        <span className='popup__title'>Оцените товар:</span>
+                        <div className='popup__rating' onClick={handleFieldChange}>
+                            <label className={oneStar}>
+                                <input className='visually-hidden' name='appraisal' defaultValue={1} type='radio'/>
+                            </label>
+                            <label className={twoStar}>
+                                <input className='visually-hidden' name='appraisal' defaultValue={2} type='radio'/>
+                            </label>
+                            <label className={threeStar}>
+                                <input className='visually-hidden' name='appraisal' defaultValue={3} type='radio'/>
+                            </label>
+                            <label className={fourStar}>
+                                <input className='visually-hidden' name='appraisal' defaultValue={4} type='radio'/>
+                            </label>
+                            <label className={fiveStar}>
+                                <input className='visually-hidden' name='appraisal' defaultValue={5} type='radio'/>
+                            </label>
+                        </div>
+                    </div>
+                    <textarea className='popup__text popup__text-comment' placeholder='Комментарий' required name='comment' onChange={handleFieldChange}></textarea>
+                </div>
+            </div>
+            <button className='popup__button' type='submit'>оставить отзыв</button>
+            <button className='popup__button-close' onClick={() => handleClosePopup()}></button>
+        </form>
     )
 }
 

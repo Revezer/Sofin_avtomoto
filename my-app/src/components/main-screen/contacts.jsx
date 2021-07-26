@@ -15,11 +15,11 @@ const Contacts = () => {
                 </div>
                 <div className='contact__container'>
                     <span className='contact__title'>Телефон</span>
-                    <span className='contact__text'>8 (800) 333-55-99</span>
+                    <a href='tel:88003335599' className='contact__text'>8 (800) 333-55-99</a>
                 </div>
                 <div className='contact__container'>
                     <span className='contact__title'>E-mail</span>
-                    <span className='contact__text'>info@avto-moto.ru</span>
+                    <a href='mailto:info@avto-moto.ru' className='contact__text'>info@avto-moto.ru</a>
                 </div>
             </div>
             <div>
