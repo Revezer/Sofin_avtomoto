@@ -463,8 +463,10 @@
 
 .section__contacts {
     display: flex;
-    margin-left: 6px;
     margin-top: 30px;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact__block {
@@ -521,10 +523,6 @@
     background: $whiteSmoke;
 }
 
-.review__popup-disabled {
-    display: none;
-}
-
 .popup__block {
     display: flex;
     width: 628px;
@@ -572,6 +570,7 @@
     height: 44px;
     padding-left: 25px;
     font-family: 'Open Sans', 'Arial', sans-serif;
+    border: 1px solid rgba(72, 73, 77, 0.2);
 }
 
 .popup__text-comment {
@@ -606,6 +605,7 @@
     font-size: 15px;
     line-height: 20px;
     padding-top: 4px;
+    white-space: nowrap;
 }
 
 .popup__button-close {
@@ -641,8 +641,16 @@
 }
 
 .visually-hidden {
-    position: absolute;
-    clip: rect(0 0 0 0);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 27px;
+    height: 25px;
+}
+
+.visually-hidden:focus {
+    outline: solid 0.2em #4a90e2;
+    outline-offset: 0.2em;
 }
 
 .dignity-title, .limitation-title {
@@ -669,4 +677,8 @@
     position: absolute;
     left: -15px;
     top: 9px;
+}
+
+.closepopup {
+    display: none;
 }

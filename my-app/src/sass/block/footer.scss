@@ -8,7 +8,6 @@
 
 .footer__list {
     display: flex;
-    justify-content: space-between;
     flex-grow: 1;
     list-style-type: none;
     max-width: 1024px;
@@ -28,4 +27,8 @@
     line-height: 22px;
     color: $mediumGray;
     white-space: nowrap;
+}
+
+.footer__item {
+    padding-left: 20px;
 }

@@ -4,7 +4,7 @@ import {addReview, openPopup} from '../../store/action'
 import PropTypes from 'prop-types'
 
 const Popup = (props) => {
-    const {reviews, addNewReview, popup, closePopup} = props
+    const {reviews, addNewReview, closePopup} = props
 
     const [newReview, setNewReview] = useState({
         name: '',
@@ -32,25 +32,23 @@ const Popup = (props) => {
         document.body.classList.remove('overflow');
     }
 
-    const disabledPopup = popup === 'close' ? 'review__popup popup review__popup-disabled' : 'review__popup'
-
     const handleClosePopup = () => {
         closePopup('close')
         document.body.classList.remove('overflow');
     }
 
-    const oneStar = newReview.appraisal > 0 ? 'popup__redstar' : 'popup__star'
-    const twoStar = newReview.appraisal > 1 ? 'popup__redstar' : 'popup__star'
-    const threeStar = newReview.appraisal > 2 ? 'popup__redstar' : 'popup__star'
-    const fourStar = newReview.appraisal > 3 ? 'popup__redstar' : 'popup__star'
-    const fiveStar = newReview.appraisal > 4 ? 'popup__redstar' : 'popup__star'
+    const oneStar = newReview.appraisal > 0 ? 'popup__redstar popup__star-focus' : 'popup__star popup__star-focus'
+    const twoStar = newReview.appraisal > 1 ? 'popup__redstar popup__star-focus' : 'popup__star popup__star-focus'
+    const threeStar = newReview.appraisal > 2 ? 'popup__redstar popup__star-focus' : 'popup__star popup__star-focus'
+    const fourStar = newReview.appraisal > 3 ? 'popup__redstar popup__star-focus' : 'popup__star popup__star-focus'
+    const fiveStar = newReview.appraisal > 4 ? 'popup__redstar popup__star-focus' : 'popup__star popup__star-focus'
 
     return (
-        <form className={disabledPopup} onSubmit={handleSubmit}>
+        <form className='review__popup' onSubmit={handleSubmit}>
             <span className='popup__name'>Оставить отзыв</span>
             <div className='popup__block'>
                 <div className='popup__conteiner'>
-                    <input className='popup__text' placeholder='Имя' required name='name' onChange={handleFieldChange}></input>
+                    <input autoFocus={true} className='popup__text' placeholder='Имя' required name='name' onChange={handleFieldChange}></input>
                     <input className='popup__text' placeholder='Достоинства' name='dignity' onChange={handleFieldChange}></input>
                     <input className='popup__text' placeholder='Недостатки' name='limitations' onChange={handleFieldChange}></input>
                 </div>
@@ -87,7 +85,6 @@ const Popup = (props) => {
 Popup.propTypes = {
     addNewReview: PropTypes.func.isRequired,
     closePopup: PropTypes.func.isRequired,
-    popup: PropTypes.string.isRequired,
     reviews: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string.isRequired,
         dignity: PropTypes.string,
@@ -98,8 +95,7 @@ Popup.propTypes = {
   };
 
 const mapStateToProps = (state) => ({
-    reviews: state.reviews,
-    popup: state.popup
+    reviews: state.reviews
 })
 
 const mapDispatchToProps = (dispatch) => ({

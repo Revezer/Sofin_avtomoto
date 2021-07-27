@@ -17,6 +17,7 @@ import {slideSelection, choiceInformation, openPopup} from '../../store/action'
 import ReviewsComponent from './reviews'
 import FooterComponent from './footer'
 import PropTypes from 'prop-types'
+import PopupComponent from '../main-screen/popup'
 
 const MIN_SLIDE = 0
 const MAX_SLIDE = 2
@@ -61,6 +62,8 @@ const Main = (props) => {
     }
 
     const closePopupDiv = popup === 'open' ? <div className='openpopup' onClick={handleClosePopup}></div> : ''
+
+    const activityPopup = popup === 'open' ? <PopupComponent /> : ''
 
     const leftButtonInactive =  slideNumber === MIN_SLIDE ? 'slider__button slider__button-inactiveLeft' : 'slider__button slider__button-activeLeft'
     const rightButtonInactive = slideNumber === MAX_SLIDE ? 'slider__button slider__button-inactiveRight' : 'slider__button slider__button-activeRight'
@@ -124,6 +127,7 @@ const Main = (props) => {
             </main>
             <FooterComponent />
             {closePopupDiv}
+            {activityPopup}            
         </>
     )
 }
