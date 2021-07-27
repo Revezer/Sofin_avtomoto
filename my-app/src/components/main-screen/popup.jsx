@@ -43,7 +43,7 @@ const Popup = (props) => {
     const threeStar = newReview.appraisal > 2 ? 'popup__redstar popup__star-focus' : 'popup__star popup__star-focus'
     const fourStar = newReview.appraisal > 3 ? 'popup__redstar popup__star-focus' : 'popup__star popup__star-focus'
     const fiveStar = newReview.appraisal > 4 ? 'popup__redstar popup__star-focus' : 'popup__star popup__star-focus'
-
+    
     return (
         <FocusTrap>
             <form className='review__popup' onSubmit={handleSubmit}>
