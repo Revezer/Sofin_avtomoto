@@ -83,11 +83,11 @@ const Main = (props) => {
                             <span className='conteiner__photo-text'>new model</span>
                         </div>
                         <div className='conteiner__slider slider'>
-                            <button className={leftButtonInactive} onClick={onButtonClickPreviousSlide}></button>
+                            <button className={leftButtonInactive} aria-label='кнопка в лево' onClick={onButtonClickPreviousSlide}></button>
                             <img src={firstPhotoMini} alt='фотография'></img>
                             <img src={twoPhotoMini} alt='фотография'></img>
                             <img src={threePhotoMini} alt='фотография'></img>
-                            <button className={rightButtonInactive} onClick={onButtonClickNextSlide}></button>
+                            <button className={rightButtonInactive} aria-label='кнопка в право' onClick={onButtonClickNextSlide}></button>
                         </div>
                     </div>
                     <div className='container__info info'>
