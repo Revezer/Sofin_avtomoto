@@ -75,7 +75,7 @@ const Main = (props) => {
     return (
         <>
             <HeaderComponent />
-            <main className='main'>
+            <main inert className='main'>
                 <div className='main__conteiner conteiner'>
                     <div>
                         <div className='conteiner__photo'>
